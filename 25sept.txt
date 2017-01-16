@@ -1,2 +1,3 @@
 better find your location find your place
 
+mohit is my name and i am trying to auto mate the git commit and git git push 
