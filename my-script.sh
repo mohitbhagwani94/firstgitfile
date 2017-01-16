@@ -12,4 +12,4 @@ git push
 echo "============End of Push command============"
 
 #sudo git config --global credential.helper store
-#fasdsfdsfadsadsadawdsdasdasdasdasdadasdadasd	adsasdasdasdasdadasdsd asdasdas
+#fasdsfdsfadsadsadawdsdasdasdasdasdadasdadasd	adsasdasdasdasdadasdsd asdasdasasdasdasdasd
