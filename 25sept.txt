@@ -4,3 +4,6 @@ mohit is my name and i am trying to auto mate the git commit and git git push
 yi pe finally  reset is working
 
 push working but does not know about the pull does not work for pull
+
+doing git reset
+
