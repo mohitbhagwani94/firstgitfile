@@ -9,3 +9,5 @@ echo "============End of Commit command============"
 echo "============Start of Push command============"
 git push
 echo "============End of Push command============"
+
+#sudo git config --global credential.helper store
