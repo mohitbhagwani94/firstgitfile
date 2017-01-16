@@ -4,7 +4,7 @@ git pull
 echo "End of Pull command"
 echo "Start of Commit command"
 git add .
-git commit -m "automate commiti123123	ng"
+git commit -m "automate commiting 4"
 echo "End of Commit command"
 echo "Start of Push command"
 git push
