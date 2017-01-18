@@ -6,7 +6,9 @@ echo "============End of Pull command============"
 echo "============Start of Commit command============"
 git add .
 #git reset my-script.sh 
-git commit -m "msg automation"
+echo -n "Enter you msg";
+read MSG
+git commit -m "$MSG"
 echo "============End of Commit command============"
 echo "============Start of Push command============"
 git push
