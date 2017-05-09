@@ -2,23 +2,42 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
-class App extends Component {
-  constructor(props){
-    super(props);
-    this.state = {username:''};
-    this.changeValue = this.changeValue.bind(this)
-    this.printValue = this.printValue.bind(this);
+import { connect } from "react-redux"
+import { addField, updateField } from "./actions/userAction"
 
+class App extends React.Component {
+  constructor(){
+    super();
+    this.handleOnChange = this.handleOnChange.bind(this);
   }
+  componentWillMount(){
+    this.props.dispatch(addField({
+      name:"username",
+      value:""
+    }));
 
-  changeValue(e){
-    this.setState({ username:e.target.value });
+    this.props.dispatch(addField({
+      name:"age",
+      value:""
+    }));
   }
-  printValue(e){
-    e.preventDefault();
-    alert(this.state.username);
+  handleOnChange(e){
+    this.props.dispatch(updateField({
+        name:e.target.name,
+        value:e.target.value
+      }))
+  }
+  getValue(key) {
+    
+    if(this.props.user.hasOwnProperty(key)) {
+      return this.props.user[key];
+    }
+    console.log("called");
+    return '';
   }
   render() {
+    console.log(this.getValue("username"));
+
     return (
       <div className="App">
         <div className="App-header">
@@ -26,11 +45,18 @@ class App extends Component {
           <h2>Welcome to React</h2>
         </div>
         <label>Username</label>
-        <input type="text" onChange={this.changeValue}></input>
-        <button type="button" onClick={this.printValue}>Print</button>
+        <input type="text" name="username"  onChange={this.handleOnChange} />
+        <label>age</label>
+        <input type="text" name="age" value={this.getValue("age")} onChange={this.handleOnChange} />
+        <button type="button" onClick={this.printValue} >Print</button>
       </div>
     );
   }
 }
 
-export default App;
+
+export default connect((store) => {
+  return{
+    user:store.user
+  };
+})(App);
